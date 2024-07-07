@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class Game { // 절차형 프로그램
 	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); // 입력준비
 
 		int gameCoin = 1000;
 		int menu = -1;
@@ -33,22 +33,21 @@ public class Game { // 절차형 프로그램
 				System.out.print("정말로 게임을 종료하시겠습니까?(y/n): ");
 				char result = (char) System.in.read();
 				System.in.read();
-				System.in.read();
+				System.in.read(); // 엔터값 처리
 				if (result == 'Y' || result == 'y') {
 					System.out.println("프로그램을 종료합니다."); // 생략가능
-					// break;
-					isLoop = false;
+					isLoop = false; // break; // System.exit(0);
 				} else {
 					System.out.println("프로그램 종료를 취소합니다.");
 					System.out.println();
-					// continue;
-					isLoop = true;
 				}
-
+				continue;
 			}
 
 			if (menu != 1 && menu != 2) {
 				System.out.println("메뉴입력오류 - 메뉴를 확인하시고 다시 입력해 주세요");
+				System.out.println();
+				continue;
 			}
 
 			System.out.println();
@@ -66,12 +65,15 @@ public class Game { // 절차형 프로그램
 			if (batMoney > gameCoin) {
 				System.out.println();
 				System.out.println("보유한 게임머니보다 큰 금액 배팅 불가능 합니다. \n 배팅금액은 기본값인 100원으로 처리됩니다.");
+				batMoney = 100;
 			}
 
 			System.out.println();
 			System.out.println("주사위를 던지려면 Enter를 치세요.");
 			System.in.read();
 			System.in.read();// 엔터값 처리
+
+			System.out.println();
 			int dice = (int) (Math.random() * 6) + 1;
 
 			System.out.println("주사위 값: " + dice);
@@ -88,10 +90,9 @@ public class Game { // 절차형 프로그램
 
 			if (gameCoin <= 0) {
 				System.out.println("게임머니를 모두 소진하였습니다.");
-				System.out.println("게임을 종료합니다.");
 				isLoop = false; // break;
 			}
 		} // end while
+		System.out.println("게임을 종료합니다.");
 	}
-
 }// end main
