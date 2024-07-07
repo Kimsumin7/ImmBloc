@@ -1,0 +1,8 @@
+package tommy.java.exam03;
+
+public class SwitchEx {
+	public static void main(String[] args) {
+
+	}
+
+}
