@@ -3,7 +3,10 @@ package test03;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+/** 
+ * 단 자리 숫자 2개를 입력받아서 합 차 곱 나누기 나눗셈의 나머지를 구하는 프로그램을 
+작성하세요. (System.in.read()를 이용할 것)
+*/
 public class Q17 {
 
     public static void main(String[] args) throws IOException {
