@@ -23,6 +23,16 @@ app.get('/', (req,res)=>{
     res.render('index'); //index가 얘는 메인
 })
 
+//login
+app.get('/login', (req,res)=>{
+    res.render('index', {'center':'login'});
+})
+
+//register
+app.get('/register', (req,res)=>{
+    res.render('index', {'center':'register'});
+})
+
 //브라우저에서 요청을 계속 보내는
 app.listen(port,()=>{
     console.log(`server start port:${port}`)
